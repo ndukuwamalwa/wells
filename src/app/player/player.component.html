@@ -1,0 +1,8 @@
+<div id="player">
+    <span id="song-title">{{song.title}} - {{song.artist}}</span>
+    <aside>
+        <i class="fa fa-backward" (click)="prev()"></i>
+        <audio preload="none" controls [autoplay]="isPlaying" id="audio" [src]="song?.path"></audio>
+        <i class="fa fa-forward" (click)="next()"></i>
+    </aside>
+</div>

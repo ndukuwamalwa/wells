@@ -1,0 +1,116 @@
+#banner {
+    width: 100%;
+    background: linear-gradient(to right,rgb(23, 23, 211), rgb(98, 98, 240), rgb(101, 101, 197));
+    position: relative;
+}
+
+#search {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+
+#account {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+}
+
+#song {
+    position: absolute;
+    left: 30px;
+    color: #fff;
+}
+
+#song-action {
+    position: absolute;
+    display: flex;
+    left: 30px;
+}
+
+#song-action button {
+    margin: 0 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#song-action button:first-child {
+    background: #000;
+}
+
+@media all and (max-width: 800px) {
+    #banner {
+        height: var(--banner-heigth-mobile);
+    }
+
+    #song span {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    #song {
+        top: 80px;
+        left: 70px;
+    }
+    
+    #song h1 {
+        font-size: 20px;
+    }
+
+    #song-action {
+        bottom: 10px;
+        left: 70px;
+    }
+}
+
+@media all and (min-width: 801px) and (max-width: 1000px) {
+    #banner {
+        height: var(--banner-height-tablet);
+    }
+
+    #song span {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    #song {
+        top: 100px;
+        left: 80px;
+    }
+    
+    #song h1 {
+        font-size: 68px;
+    }
+
+    #song-action {
+        bottom: 15px;
+        left: 80px;
+    }
+}
+
+@media all and (min-width: 1001px) {
+    #banner {
+        height: var(--banner-height-desktop);;
+        border-top-left-radius: 60px;
+    }
+
+    #song span {
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    #song {
+        top: 35%;
+    }
+    
+    #song h1 {
+        font-size: 80px;
+    }
+
+    #song-action {
+        bottom: 70px;
+    }
+}

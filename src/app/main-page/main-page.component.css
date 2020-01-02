@@ -1,0 +1,106 @@
+#show, #hide {
+    position: fixed;
+    background: blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    display: none;
+    transition-property: all;
+    z-index: 500;
+    color: #fff;
+}
+
+@keyframes navAnnimateMobile {
+    0% {
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    100% {
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes navAnnimateTablet {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+main {
+    margin-bottom: 200px;
+}
+
+@media all and (max-width: 800px) {
+    header,nav,main {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+        animation: navAnnimateMobile 700ms;
+        box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    }
+
+    #show {
+        display: flex;
+    }
+}
+
+@media all and (min-width: 801px) and (max-width: 1000px) {
+    nav {
+        position: fixed;
+        top: 0;
+        z-index: 370;
+        background-color: #fff;
+        box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+        display: none;
+        animation: navAnnimateTablet 700ms;
+    }
+    #show {
+        display: flex;
+    }
+}
+
+@media all and (min-width: 1001px) {
+    header, main {
+        position: absolute;
+    }
+
+    #show, #hide {
+        display: none !important;
+    }
+
+    nav {
+        left: 0;
+        width: var(--nav-width-desktop);
+        position: fixed;
+        overflow-y: auto;
+        display: flex !important;
+    }
+
+    header, main {
+        left: calc(var(--nav-width-desktop) + 2%);
+        width: calc(100% - (var(--nav-width-desktop)) - 2%);
+        z-index: 80;
+    }
+
+    main {
+        top: calc(100% - (var(--banner-height-desktop)) + 30px);
+        min-height: calc(100% - (var(--banner-height-desktop)) + 38px);
+        background: var(--display-container-color);
+        border-radius: 30px 30px 0 0;
+        z-index: -100;
+    }
+}

@@ -1,0 +1,180 @@
+#nav {
+    background: #fff;
+    display: flex;
+}
+
+#nav > h2 {
+    display: flex;
+}
+
+#brand {
+    background: linear-gradient(to right, blue, rgb(113, 113, 192));
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    transform: skew(-20deg, 0);
+    margin-right: 10px;
+}
+
+#nav a, #nav span {
+    white-space: nowrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#playlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#add-playlist {
+    background-color: #e7e7e7;
+    padding: 3px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media all and (max-width: 800px) {
+    #nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #nav > h2 {
+        flex-basis: 100%;
+        padding: 10px 20px;
+        margin-left: 60px;
+    }
+
+    #nav > div {
+        flex-basis: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #menu a{
+        flex-basis: 30%;
+        margin: 1%;
+        padding: 5px;
+        display: flex;
+        cursor: pointer;
+    }
+
+    #menu a > i {
+        opacity: .5;
+        margin-right: 7px;
+    }
+
+    #menu a > span {
+        font-weight: bold;
+    }
+
+    .collection > span {
+        flex-basis: 100%;
+        padding: 10px;
+        opacity: .6;
+    }
+
+    .collection > a {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .collection > a > i {
+        opacity: .5;
+        margin-right: 7px;
+    }
+
+    .collection > a > span {
+        font-weight: bold;
+    }
+}
+
+@media all and (min-width: 800px) {
+    #nav {
+      flex-direction: column;
+      padding: 10px 10px 15px 12px;
+    }
+
+    #nav > h2 {
+        padding: 10px 0 18px 0;
+    }
+
+    #nav > div {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0 10px 0;
+    }
+
+    #menu a{
+        margin: 10px 0;
+        font-size: 12px;
+    }
+
+    #menu a > i {
+       opacity: .4;
+       margin-right: 10px;
+       width: 20px;
+    }
+
+    #menu a > span {
+        font-weight: bold;
+    }
+
+    .collection > span {
+        opacity: .5;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .collection > a {
+        margin: 10px 0;
+        font-size: 12px;
+    }
+
+    .collection > a > i {
+        opacity: .4;
+        margin-right: 10px;
+        width: 20px;
+    }
+
+    .collection > a > span {
+        font-weight: bold;
+    }
+
+    #playlist {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media all and (min-width: 801px) and (max-width: 1000px) {
+    #nav {
+        width: 30%;
+    }
+}
+
+@media all and (min-width: 1001px) {
+    #nav {
+        width: 100%;
+    }
+
+    #nav > h2 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,121 @@
+<div id="display">
+    <div id="tabs">
+        <span data-show="music" (click)="changeTab('music')">Music</span>
+        <span data-show="merch" (click)="changeTab('merch')">Merch</span>
+        <span data-show="videos" (click)="changeTab('videos')">Videos</span>
+        <span data-show="shows" (click)="changeTab('shows')">Shows</span>
+        <span data-show="about" (click)="changeTab('about')">About</span>
+    </div>
+    <div id="tab-content">
+        <div id="music">
+            <article>
+                <div>
+                    <h2>Popular <span>Show All</span></h2>
+                    <table>
+                        <tbody>
+                            <tr *ngFor="let p of popular();index as i">
+                                <td>{{i}}</td>
+                                <td>{{p.title}}</td>
+                                <td>{{p.length.replace('m',':').replace('s','').replace(' ','')}}</td>
+                                <td>{{p.times}}</td>
+                                <td class="favorite" (click)="favourite(p)"><i class="fa" [ngClass]="{ 
+                                    'fa-heart-o': !isFavourite(p), 
+                                    'fa-heart': isFavourite(p),
+                                    'red': isFavourite(p)
+                                }"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h2>Videos <span>Show All</span></h2>
+                    <div id="hot-videos">
+                        <div class="video-display">
+                            <video poster="assets/videos/1.png" controls>
+                                <source src="assets/videos/1.webm">
+                            </video>
+                            <span>Se Me Hace Facil</span>
+                            <span>4:35</span>
+                        </div>
+                        <div class="video-display">
+                            <video poster="assets/videos/2.png" controls>
+                                <source src="assets/videos/2.webm">
+                            </video>
+                            <span>I want to know what love is</span>
+                            <span>3:39</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <h2>Albums <span>Show All</span></h2>
+                    <div class="albums">
+                        <div class="album">
+                            <div style="background-image: url('assets/albums/5.jpg');"></div>
+                            <span>The Classics</span>
+                            <span>2000</span>
+                        </div>
+                        <div class="album">
+                            <div style="background-image: url('assets/albums/4.png');"></div>
+                            <span>The Millenials</span>
+                            <span>2006</span>
+                        </div>
+                        <div class="album">
+                            <div style="background-image: url('assets/albums/3.jpg');"></div>
+                            <span>Heart Breaks</span>
+                            <span>2008</span>
+                        </div>
+                        <div class="album">
+                            <div style="background-image: url('assets/albums/2.jpg');"></div>
+                            <span>Monsters</span>
+                            <span>2012</span>
+                        </div>
+                        <div class="album">
+                            <div style="background-image: url('assets/albums/1.jpg');"></div>
+                            <span>Country</span>
+                            <span>2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Similar Artists <span>Show All</span></h2>
+                    <aside id="similar-artists">
+                        <div>
+                            <span style="background-image: url('assets/artists/1.png');"></span>
+                            <span>Blur</span>
+                            <button>Follow</button>
+                        </div>
+                        <div>
+                            <span style="background-image: url('assets/artists/2.png');"></span>
+                            <span>The white stripes</span>
+                            <button>Follow</button>
+                        </div>
+                        <div>
+                            <span style="background-image: url('assets/artists/3.png');"></span>
+                            <span>Space Mankoyz</span>
+                            <button>Follow</button>
+                        </div>
+                    </aside>
+                </div>
+            </article>
+        </div>
+        <div id="merch">
+            <article></article>
+            <article></article>
+        </div>
+        <div id="videos">
+            <article></article>
+            <article></article>
+        </div>
+        <div id="shows">
+            <article></article>
+            <article></article>
+        </div>
+        <div id="about">
+            <article></article>
+            <article></article>
+        </div>
+    </div>
+</div>
